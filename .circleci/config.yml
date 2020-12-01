@@ -101,7 +101,7 @@ jobs:
       - checkout
       - run:
           name: Heroku Deploy
-          command: git push https://heroku:82c54f90-3acc-4ec5-80d0-d4931333e21d@git.heroku.com/limitless-reaches-59900.git HEAD:master
+          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git HEAD:master
       - run:
           name: Smoke Test
           command: ./test.sh
