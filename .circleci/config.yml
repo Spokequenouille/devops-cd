@@ -54,6 +54,7 @@ jobs:
           at: /tmp
       - run:
           name: Deploy app
+          #todo
           command: echo todo && false
   back-test-unit:
     docker:
@@ -100,6 +101,7 @@ jobs:
     steps:
       - checkout
       - run:
+        #todo
           name: Heroku Deploy
           command: heroku open
       - run:
@@ -120,15 +122,6 @@ workflows:
       - lint:
           requires:
             - build
-      - docker-build-and-push:
-          requires:
-            - build
-            - lint
-            - back-test-e2e
-            - back-test-unit
-          filters:
-            branches:
-              only: main
       - back-deploy-heroku:
           requires:
             - build
