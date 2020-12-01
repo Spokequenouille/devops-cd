@@ -54,7 +54,6 @@ jobs:
           at: /tmp
       - run:
           name: Deploy app
-          #todo
           command: netlify deploy --push
   back-test-unit:
     docker:
@@ -101,7 +100,6 @@ jobs:
     steps:
       - checkout
       - run:
-        #todo
           name: Heroku Deploy
           command: git push https://heroku:82c54f90-3acc-4ec5-80d0-d4931333e21d@git.heroku.com/limitless-reaches-59900.git HEAD:master
       - run:
